@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<!-- saved from url=(0160)https://lookaside.fbsbx.com/m8/file_lookaside/?file_id=1250490430373534&origin=https%3A%2F%2Fwww.internalfb.com&ext=1771927651&hash=Q4WxBwFz5AKe1xJTRrKB5ncOf_eA -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Draft</title>
+    <link href="./index_files/css2" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto Condensed', sans-serif;
+            background: #ffffff;
+            min-height: 100vh;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header - Retro Pixel Art Golf Style */
+        header {
+            position: relative;
+            padding: 60px 20px 80px;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(180deg, 
+                #4a90d9 0%, 
+                #5a9fe8 15%, 
+                #6aafff 25%, 
+                #5a9fe8 30%,
+                #4a90d9 35%,
+                #3d8030 35%,
+                #3d8030 100%);
+            image-rendering: pixelated;
+        }
+
+        /* Clouds */
+        header::before {
+            content: "";
+            position: absolute;
+            top: 20px;
+            left: 15%;
+            width: 80px;
+            height: 40px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 
+                30px 5px 0 10px #fff,
+                -20px 5px 0 5px #fff,
+                120px 10px 0 15px #fff,
+                150px 15px 0 10px #fff,
+                300px -5px 0 20px #fff,
+                340px 0 0 10px #fff,
+                500px 5px 0 15px #fff,
+                530px 10px 0 8px #fff;
+        }
+
+        /* Striped green pattern */
+        .green-stripes {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 65%;
+            background: repeating-linear-gradient(
+                90deg,
+                #2d7a2d 0px,
+                #2d7a2d 60px,
+                #3d8c3d 60px,
+                #3d8c3d 120px
+            );
+            transform: perspective(400px) rotateX(25deg);
+            transform-origin: bottom center;
+        }
+
+        /* Darker green edge/rough */
+        .rough-edge {
+            position: absolute;
+            bottom: 60%;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: #1a5c1a;
+            z-index: 1;
+        }
+
+        /* Trees background */
+        .trees {
+            position: absolute;
+            top: 32%;
+            left: 0;
+            right: 0;
+            height: 30px;
+            z-index: 0;
+        }
+
+        .tree {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 35px solid #1a5c1a;
+        }
+
+        .tree::after {
+            content: "";
+            position: absolute;
+            top: 35px;
+            left: -5px;
+            width: 10px;
+            height: 15px;
+            background: #4a3728;
+        }
+
+        .tree:nth-child(1) { left: 5%; }
+        .tree:nth-child(2) { left: 12%; transform: scale(0.8); }
+        .tree:nth-child(3) { left: 18%; transform: scale(1.2); }
+        .tree:nth-child(4) { left: 80%; }
+        .tree:nth-child(5) { left: 87%; transform: scale(0.9); }
+        .tree:nth-child(6) { left: 93%; transform: scale(1.1); }
+
+        /* Sand bunkers */
+        .bunker {
+            position: absolute;
+            bottom: 25%;
+            width: 60px;
+            height: 25px;
+            background: #d4b896;
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        .bunker.left { left: 8%; }
+        .bunker.right { right: 8%; }
+
+        /* Golf flag */
+        .golf-flag {
+            position: absolute;
+            right: 20%;
+            bottom: 30%;
+            z-index: 5;
+        }
+
+        .flag-pole {
+            width: 4px;
+            height: 60px;
+            background: #fff;
+            position: relative;
+            box-shadow: 2px 0 0 #ccc;
+        }
+
+        .flag {
+            position: absolute;
+            top: 0;
+            left: 4px;
+            width: 35px;
+            height: 22px;
+            background: #cc0000;
+            clip-path: polygon(0 0, 100% 50%, 0 100%);
+        }
+
+        .golf-hole {
+            position: absolute;
+            bottom: -8px;
+            left: -8px;
+            width: 20px;
+            height: 10px;
+            background: #000;
+            border-radius: 50%;
+        }
+
+        /* Golf ball */
+        .golf-ball {
+            position: absolute;
+            right: 28%;
+            bottom: 32%;
+            width: 16px;
+            height: 16px;
+            background: radial-gradient(circle at 30% 30%, #fff, #ddd);
+            border-radius: 50%;
+            z-index: 5;
+            box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+        }
+
+        /* Retro scoreboard */
+        .scoreboard {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #000;
+            border: 3px solid #fff;
+            padding: 8px 12px;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 10px;
+            color: #fff;
+            line-height: 1.6;
+            text-align: left;
+            z-index: 10;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .ea-badge {
+            display: inline-block;
+            background: linear-gradient(180deg, #fff 0%, #ddd 100%);
+            color: #1a5c1a;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 0.9rem;
+            padding: 4px 12px;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 5rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            color: #ffffff;
+            text-shadow: 
+                3px 3px 0 #000,
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                0 4px 0 rgba(0,0,0,0.3);
+            line-height: 0.9;
+            margin-bottom: 5px;
+        }
+
+        .title-golf {
+            display: block;
+            font-size: 2rem;
+            letter-spacing: 15px;
+            color: #FFD700;
+            text-shadow: 
+                2px 2px 0 #000,
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000;
+        }
+
+        .subtitle {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            color: #fff;
+            letter-spacing: 8px;
+            margin-top: 10px;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 0 #000;
+        }
+
+        .season-badge {
+            display: inline-block;
+            background: linear-gradient(180deg, #FFD700 0%, #FF8C00 100%);
+            color: #000;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.2rem;
+            padding: 8px 25px;
+            margin-top: 15px;
+            clip-path: polygon(3% 0%, 100% 0%, 97% 100%, 0% 100%);
+            letter-spacing: 4px;
+            box-shadow: 0 4px 0 #b36b00;
+        }
+
+        /* Teams Grid */
+        .teams-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            padding: 30px 20px;
+        }
+
+        @media (max-width: 1100px) {
+            .teams-section {
+                grid-template-columns: 1fr;
+                max-width: 550px;
+                margin: 0 auto;
+            }
+            h1 { font-size: 3.5rem; }
+            .title-golf { font-size: 1.5rem; }
+            .scoreboard { display: none; }
+            .bunker { display: none; }
+        }
+
+        /* Team Card */
+        .team-card {
+            background: #fff;
+            border: 2px solid #ddd;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border-radius: 4px;
+        }
+
+        .team-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #228b22, #32cd32, #228b22);
+        }
+
+        .team-card.first-place {
+            border-color: #FFD700;
+            box-shadow: 0 10px 40px rgba(255,215,0,0.2);
+        }
+
+        .team-card.first-place::before {
+            background: linear-gradient(90deg, #FFD700, #FFA500, #FFD700);
+        }
+
+        .team-card.second-place {
+            border-color: #C0C0C0;
+        }
+
+        .team-card.third-place {
+            border-color: #CD7F32;
+        }
+
+        .team-header {
+            background: linear-gradient(180deg, #f5f5f5 0%, #eee 100%);
+            padding: 20px 20px 15px;
+            border-bottom: 1px solid #ddd;
+            position: relative;
+        }
+
+        .team-header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100px;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 50%, rgba(34,139,34,0.1) 50%);
+        }
+
+        .first-place .team-header {
+            background: linear-gradient(180deg, #fffef0 0%, #fff8dc 100%);
+        }
+
+        .first-place .team-header::after {
+            background: linear-gradient(135deg, transparent 50%, rgba(255,215,0,0.2) 50%);
+        }
+
+        .team-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #1a1a1a;
+            position: relative;
+            z-index: 1;
+        }
+
+        .team-total {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            color: #666;
+            margin-top: 5px;
+            letter-spacing: 2px;
+        }
+
+        .team-total span {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #2e7d32;
+        }
+
+        .first-place .team-total span {
+            color: #1b5e20;
+        }
+
+        .team-wins {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 3px;
+            letter-spacing: 1px;
+        }
+
+        .team-wins span {
+            color: #FFD700;
+        }
+
+        /* Table styling */
+        .roster-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .roster-table thead {
+            background: #f9f9f9;
+        }
+
+        .roster-table th {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .roster-table th:last-child {
+            text-align: right;
+        }
+
+        .roster-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .roster-table tr {
+            transition: all 0.2s ease;
+        }
+
+        .roster-table tbody tr:hover {
+            background: linear-gradient(90deg, rgba(34,139,34,0.05) 0%, rgba(34,139,34,0.02) 100%);
+        }
+
+        .pick-num {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1rem;
+            color: #999;
+            width: 30px;
+        }
+
+        .player-name {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 0.95rem;
+            color: #333;
+            font-weight: 400;
+        }
+
+        .trophy {
+            font-size: 0.85rem;
+            margin-left: 5px;
+        }
+
+        .prize-money {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.9rem;
+            color: #2e7d32;
+            text-align: right;
+            font-weight: 500;
+        }
+
+        .prize-money.zero {
+            color: #bbb;
+        }
+
+        /* Leader badge */
+        .leader-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(180deg, #666 0%, #444 100%);
+            color: #fff;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 0.7rem;
+            padding: 3px 10px;
+            letter-spacing: 2px;
+            clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%);
+            z-index: 2;
+        }
+
+        .first-place .leader-badge {
+            background: linear-gradient(180deg, #FFD700 0%, #FF8C00 100%);
+            color: #000;
+        }
+
+        .second-place .leader-badge {
+            background: linear-gradient(180deg, #C0C0C0 0%, #888 100%);
+            color: #000;
+        }
+
+        .third-place .leader-badge {
+            background: linear-gradient(180deg, #CD7F32 0%, #8B4513 100%);
+            color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            position: relative;
+            background: linear-gradient(180deg, #f8f8f8 0%, #3d8c3d 100%);
+            border-top: 1px solid #eee;
+        }
+
+        .footer-logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            color: #fff;
+            letter-spacing: 8px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 0 #000;
+        }
+
+        .footer-text {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.9);
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+        }
+    </style>
+<style id="metamate-chrome-extension-floating-composer-styles">
+      #metamate-chrome-extension-floating-composer {
+        position: fixed;
+        isolation: isolate;
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        width: 90%;
+        max-width: 800px;
+        min-width: min(320px, 90vw);
+        background: rgba(255, 255, 255, 0.95);
+        box-sizing: border-box;
+        border-radius: 12px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3),
+                    0 0 0 0.5px rgba(0, 0, 0, 0.1);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        cursor: grab;
+      }
+
+      #metamate-chrome-extension-floating-composer:active {
+        cursor: grabbing;
+      }
+
+      #metamate-chrome-extension-floating-composer .metamate-chrome-extension-composer-input-wrapper {
+        overflow: hidden;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-radius: 12px 12px 0 0;
+        display: flex;
+        align-items: center;
+        padding: 8px 12px;
+        font-size: 18px;
+      }
+
+      #metamate-chrome-extension-floating-composer .icon {
+        width: 28px;
+        height: 32px;
+        flex-shrink: 0;
+        margin-right: 9px;
+      }
+
+      #metamate-chrome-extension-floating-composer .composer-input {
+        flex: 1;
+        border: none;
+        outline: none;
+        background: transparent;
+        resize: none;
+        color: #1d1d1f;
+        box-sizing: border-box;
+        overflow-y: auto;
+        field-sizing: content;
+        min-height: 1em;
+        max-height: 5.5em;
+        font-family: inherit;
+        font-size: inherit;
+      }
+
+      #metamate-chrome-extension-floating-composer .composer-input::placeholder {
+        color: #86868b;
+      }
+
+      #metamate-chrome-extension-floating-composer .footer {
+        border-radius: 0 0 12px 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 12px;
+        border-top: 2px solid rgba(0, 0, 0, 0.06);
+        font-size: 12px;
+        color: #86868b;
+      }
+
+      #metamate-chrome-extension-floating-composer .error-message {
+        color: #ff3b30;
+        flex: 1;
+      }
+
+      #metamate-chrome-extension-floating-composer .end-content {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      #metamate-chrome-extension-floating-composer .shortcut-keys {
+        display: flex;
+        gap: 4px;
+      }
+    </style></head>
+<body>
+    <header>
+        <!-- Retro scoreboard -->
+        <div class="scoreboard">
+            TOUR DRAFT<br>
+            2026 SEASON
+        </div>
+
+        <!-- Trees -->
+        <div class="trees">
+            <div class="tree"></div>
+            <div class="tree"></div>
+            <div class="tree"></div>
+            <div class="tree"></div>
+            <div class="tree"></div>
+            <div class="tree"></div>
+        </div>
+
+        <!-- Rough edge -->
+        <div class="rough-edge"></div>
+
+        <!-- Striped green -->
+        <div class="green-stripes"></div>
+
+        <!-- Sand bunkers -->
+        <div class="bunker left"></div>
+        <div class="bunker right"></div>
+
+        <!-- Golf ball -->
+        <div class="golf-ball"></div>
+
+        <!-- Golf flag -->
+        <div class="golf-flag">
+            <div class="flag-pole">
+                <div class="flag"></div>
+            </div>
+            <div class="golf-hole"></div>
+        </div>
+        
+        <div class="header-content">
+            <div class="ea-badge">FANTASY GOLF</div>
+            <h1>
+                TOUR DRAFT
+                <span class="title-golf">PGA TOUR</span>
+            </h1>
+            <p class="subtitle">Draft Your Champions</p>
+            <div class="season-badge">2026 Season</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="teams-section">
+            <!-- Gearoid's Team - 1ST PLACE -->
+            <div class="team-card first-place">
+                <div class="leader-badge">1ST</div>
+                <div class="team-header">
+                    <div class="team-name">Gearoid's Team</div>
+                    <div class="team-total">Total: <span>$23,739,320</span></div>
+                    <div class="team-wins">Wins: <span>🏆🏆🏆🏆</span></div>
+                </div>
+                <table class="roster-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Player</th>
+                            <th>Earnings</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="pick-num">1</td><td class="player-name">Scottie Scheffler <span class="trophy">🏆</span></td><td class="prize-money">$3,388,180</td></tr>
+                        <tr><td class="pick-num">2</td><td class="player-name">Xander Schauffele</td><td class="prize-money">$872,280</td></tr>
+                        <tr><td class="pick-num">3</td><td class="player-name">Cameron Young</td><td class="prize-money">$771,920</td></tr>
+                        <tr><td class="pick-num">4</td><td class="player-name">Viktor Hovland</td><td class="prize-money">$360,150</td></tr>
+                        <tr><td class="pick-num">5</td><td class="player-name">Collin Morikawa <span class="trophy">🏆</span></td><td class="prize-money">$4,225,472</td></tr>
+                        <tr><td class="pick-num">6</td><td class="player-name">J.J. Spaun</td><td class="prize-money">$88,522</td></tr>
+                        <tr><td class="pick-num">7</td><td class="player-name">Hideki Matsuyama</td><td class="prize-money">$2,053,970</td></tr>
+                        <tr><td class="pick-num">8</td><td class="player-name">Chris Gotterup <span class="trophy">🏆🏆</span></td><td class="prize-money">$3,576,375</td></tr>
+                        <tr><td class="pick-num">9</td><td class="player-name">Akshay Bhatia</td><td class="prize-money">$1,448,680</td></tr>
+                        <tr><td class="pick-num">10</td><td class="player-name">Si Woo Kim</td><td class="prize-money">$1,874,755</td></tr>
+                        <tr><td class="pick-num">11</td><td class="player-name">Keegan Bradley</td><td class="prize-money">$156,464</td></tr>
+                        <tr><td class="pick-num">12</td><td class="player-name">Alex Noren</td><td class="prize-money">$540,200</td></tr>
+                        <tr><td class="pick-num">13</td><td class="player-name">Jordan Spieth</td><td class="prize-money">$612,675</td></tr>
+                        <tr><td class="pick-num">14</td><td class="player-name">Michael Thorbjornsen</td><td class="prize-money">$603,930</td></tr>
+                        <tr><td class="pick-num">15</td><td class="player-name">Will Zalatoris</td><td class="prize-money">$117,607</td></tr>
+                        <tr><td class="pick-num">16</td><td class="player-name">Nick Taylor</td><td class="prize-money">$582,408</td></tr>
+                        <tr><td class="pick-num">17</td><td class="player-name">Min Woo Lee</td><td class="prize-money">$2,277,049</td></tr>
+                        <tr><td class="pick-num">18</td><td class="player-name">Luke Clanton</td><td class="prize-money zero">$0</td></tr>
+                        <tr><td class="pick-num">19</td><td class="player-name">Johnny Keefer</td><td class="prize-money">$143,191</td></tr>
+                        <tr><td class="pick-num">20</td><td class="player-name">Michael Brennan</td><td class="prize-money">$45,492</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- John's Team - 2ND PLACE -->
+            <div class="team-card second-place">
+                <div class="leader-badge">2ND</div>
+                <div class="team-header">
+                    <div class="team-name">John's Team</div>
+                    <div class="team-total">Total: <span>$13,192,668</span></div>
+                    <div class="team-wins">Wins: <span>🏆</span></div>
+                </div>
+                <table class="roster-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Player</th>
+                            <th>Earnings</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="pick-num">1</td><td class="player-name">Rory McIlroy</td><td class="prize-money">$2,142,750</td></tr>
+                        <tr><td class="pick-num">2</td><td class="player-name">Ludvig Aberg</td><td class="prize-money">$337,875</td></tr>
+                        <tr><td class="pick-num">3</td><td class="player-name">Justin Rose <span class="trophy">🏆</span></td><td class="prize-money">$1,806,375</td></tr>
+                        <tr><td class="pick-num">4</td><td class="player-name">Sepp Straka</td><td class="prize-money">$1,934,220</td></tr>
+                        <tr><td class="pick-num">5</td><td class="player-name">Robert MacIntyre</td><td class="prize-money">$786,475</td></tr>
+                        <tr><td class="pick-num">6</td><td class="player-name">Maverick McNealy</td><td class="prize-money">$647,275</td></tr>
+                        <tr><td class="pick-num">7</td><td class="player-name">Harris English</td><td class="prize-money">$600,007</td></tr>
+                        <tr><td class="pick-num">8</td><td class="player-name">Patrick Cantlay</td><td class="prize-money">$604,740</td></tr>
+                        <tr><td class="pick-num">9</td><td class="player-name">Harry Hall</td><td class="prize-money">$530,525</td></tr>
+                        <tr><td class="pick-num">10</td><td class="player-name">Brian Harman</td><td class="prize-money">$306,429</td></tr>
+                        <tr><td class="pick-num">11</td><td class="player-name">Jason Day</td><td class="prize-money">$820,160</td></tr>
+                        <tr><td class="pick-num">12</td><td class="player-name">Lucas Glover</td><td class="prize-money">$36,500</td></tr>
+                        <tr><td class="pick-num">13</td><td class="player-name">Marco Penge</td><td class="prize-money">$355,500</td></tr>
+                        <tr><td class="pick-num">14</td><td class="player-name">Ryan Fox</td><td class="prize-money">$847,520</td></tr>
+                        <tr><td class="pick-num">15</td><td class="player-name">Billy Horschel</td><td class="prize-money">$125,095</td></tr>
+                        <tr><td class="pick-num">16</td><td class="player-name">Aldrich Potgieter</td><td class="prize-money">$878,250</td></tr>
+                        <tr><td class="pick-num">17</td><td class="player-name">Wyndham Clark</td><td class="prize-money">$354,642</td></tr>
+                        <tr><td class="pick-num">18</td><td class="player-name">Garrick Higgo</td><td class="prize-money">$38,250</td></tr>
+                        <tr><td class="pick-num">19</td><td class="player-name">Jackson Kouivan</td><td class="prize-money zero">$0</td></tr>
+                        <tr><td class="pick-num">20</td><td class="player-name">Adrien Saddier</td><td class="prize-money">$40,080</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Dave's Team - 3RD PLACE -->
+            <div class="team-card third-place">
+                <div class="leader-badge">3RD</div>
+                <div class="team-header">
+                    <div class="team-name">Dave's Team</div>
+                    <div class="team-total">Total: <span>$7,276,213</span></div>
+                    <div class="team-wins">Wins: <span>-</span></div>
+                </div>
+                <table class="roster-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Player</th>
+                            <th>Earnings</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="pick-num">1</td><td class="player-name">Tommy Fleetwood</td><td class="prize-money">$1,480,700</td></tr>
+                        <tr><td class="pick-num">2</td><td class="player-name">Russell Henley</td><td class="prize-money">$597,539</td></tr>
+                        <tr><td class="pick-num">3</td><td class="player-name">Ben Griffin</td><td class="prize-money">$412,583</td></tr>
+                        <tr><td class="pick-num">4</td><td class="player-name">Justin Thomas</td><td class="prize-money zero">$0</td></tr>
+                        <tr><td class="pick-num">5</td><td class="player-name">Shane Lowry</td><td class="prize-money">$693,250</td></tr>
+                        <tr><td class="pick-num">6</td><td class="player-name">Matt Fitzpatrick</td><td class="prize-money">$821,488</td></tr>
+                        <tr><td class="pick-num">7</td><td class="player-name">Sam Burns</td><td class="prize-money">$747,918</td></tr>
+                        <tr><td class="pick-num">8</td><td class="player-name">Corey Conners</td><td class="prize-money">$199,100</td></tr>
+                        <tr><td class="pick-num">9</td><td class="player-name">Sung Jae Im</td><td class="prize-money zero">$0</td></tr>
+                        <tr><td class="pick-num">10</td><td class="player-name">Andrew Novak</td><td class="prize-money">$407,850</td></tr>
+                        <tr><td class="pick-num">11</td><td class="player-name">Aaron Rai</td><td class="prize-money">$192,529</td></tr>
+                        <tr><td class="pick-num">12</td><td class="player-name">Brooks Koepka</td><td class="prize-money">$22,176</td></tr>
+                        <tr><td class="pick-num">13</td><td class="player-name">Tom Hoge</td><td class="prize-money">$644,364</td></tr>
+                        <tr><td class="pick-num">14</td><td class="player-name">J.T. Poston</td><td class="prize-money">$164,275</td></tr>
+                        <tr><td class="pick-num">15</td><td class="player-name">Rasmus Hojgaard</td><td class="prize-money">$163,977</td></tr>
+                        <tr><td class="pick-num">16</td><td class="player-name">Tony Finau</td><td class="prize-money">$621,529</td></tr>
+                        <tr><td class="pick-num">17</td><td class="player-name">Rasmus Neergaard-Petersen</td><td class="prize-money">$57,819</td></tr>
+                        <tr><td class="pick-num">18</td><td class="player-name">Matt Kuchar</td><td class="prize-money">$25,377</td></tr>
+                        <tr><td class="pick-num">19</td><td class="player-name">Austin Eckroat</td><td class="prize-money">$23,739</td></tr>
+                        <tr><td class="pick-num">20</td><td class="player-name">Matt Wallace</td><td class="prize-money zero">$0</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-logo">TOUR DRAFT</div>
+        <p class="footer-text">© 2026 Fantasy Golf League</p>
+    </footer>
+
+<div data-livemate-overlay="true" data-visualcompletion="ignore" style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; pointer-events: none; z-index: 2147483647; background: transparent;"><div style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.25); pointer-events: none; display: none;"></div><div style="position: fixed; border: 2px dashed rgb(0, 122, 204); background-color: rgba(255, 255, 255, 0.1); box-sizing: border-box; pointer-events: none; display: none; box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 0px 9999px;"></div><div style="position: fixed; background-color: rgba(0, 0, 0, 0.8); color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, sans-serif; pointer-events: none; display: none; white-space: nowrap;"></div><div style="position: fixed; bottom: 15%; left: 50%; transform: translateX(-50%); background-color: rgba(0, 0, 0, 0.8); color: white; padding: 12px 24px; border-radius: 9999px; font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, sans-serif; pointer-events: none; display: none; white-space: nowrap;">Click and drag at the section you want to share with Metamate</div></div><div id="metamate-chrome-extension-floating-composer">
+      <div class="metamate-chrome-extension-composer-input-wrapper">
+        <img class="icon" src="chrome-extension://ihhacjmejhjflegnlfpigefiolhppmli/icons/iconblack.png">
+        <textarea class="composer-input" placeholder="Ask Metamate to help you with something" rows="1"></textarea>
+      </div>
+      <div class="footer">
+        <div class="error-message"></div>
+        <div class="end-content">
+          <span class="binding-label">Binding</span>
+          <div class="shortcut-keys"></div>
+          <a href="https://lookaside.fbsbx.com/m8/file_lookaside/?file_id=1250490430373534&amp;origin=https%3A%2F%2Fwww.internalfb.com&amp;ext=1771927651&amp;hash=Q4WxBwFz5AKe1xJTRrKB5ncOf_eA#" class="set-link">Set</a>
+        </div>
+      </div>
+    </div></body></html>
