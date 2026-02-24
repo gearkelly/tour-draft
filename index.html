@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0160)https://lookaside.fbsbx.com/m8/file_lookaside/?file_id=1250490430373534&origin=https%3A%2F%2Fwww.internalfb.com&ext=1771927651&hash=Q4WxBwFz5AKe1xJTRrKB5ncOf_eA -->
+<!-- saved from url=(0160)https://lookaside.fbsbx.com/m8/file_lookaside/?file_id=2142112693252381&origin=https%3A%2F%2Fwww.internalfb.com&ext=1771929997&hash=Q4WxBwGoJrAC50sBKn0iTqwCOEW3 -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +24,26 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
+        }
+
+        /* Loading state */
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            color: #666;
+        }
+
+        .loading::after {
+            content: '';
+            animation: dots 1.5s infinite;
+        }
+
+        @keyframes dots {
+            0%, 20% { content: '.'; }
+            40% { content: '..'; }
+            60%, 100% { content: '...'; }
         }
 
         /* Header - Retro Pixel Art Golf Style */
@@ -276,6 +296,15 @@
             clip-path: polygon(3% 0%, 100% 0%, 97% 100%, 0% 100%);
             letter-spacing: 4px;
             box-shadow: 0 4px 0 #b36b00;
+        }
+
+        /* Last updated */
+        .last-updated {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.7);
+            margin-top: 15px;
+            text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
         }
 
         /* Teams Grid */
@@ -662,140 +691,187 @@
             </h1>
             <p class="subtitle">Draft Your Champions</p>
             <div class="season-badge">2026 Season</div>
+            <p class="last-updated" id="lastUpdated"></p>
         </div>
     </header>
 
     <div class="container">
-        <div class="teams-section">
-            <!-- Gearoid's Team - 1ST PLACE -->
-            <div class="team-card first-place">
-                <div class="leader-badge">1ST</div>
-                <div class="team-header">
-                    <div class="team-name">Gearoid's Team</div>
-                    <div class="team-total">Total: <span>$23,739,320</span></div>
-                    <div class="team-wins">Wins: <span>🏆🏆🏆🏆</span></div>
-                </div>
-                <table class="roster-table">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Player</th>
-                            <th>Earnings</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td class="pick-num">1</td><td class="player-name">Scottie Scheffler <span class="trophy">🏆</span></td><td class="prize-money">$3,388,180</td></tr>
-                        <tr><td class="pick-num">2</td><td class="player-name">Xander Schauffele</td><td class="prize-money">$872,280</td></tr>
-                        <tr><td class="pick-num">3</td><td class="player-name">Cameron Young</td><td class="prize-money">$771,920</td></tr>
-                        <tr><td class="pick-num">4</td><td class="player-name">Viktor Hovland</td><td class="prize-money">$360,150</td></tr>
-                        <tr><td class="pick-num">5</td><td class="player-name">Collin Morikawa <span class="trophy">🏆</span></td><td class="prize-money">$4,225,472</td></tr>
-                        <tr><td class="pick-num">6</td><td class="player-name">J.J. Spaun</td><td class="prize-money">$88,522</td></tr>
-                        <tr><td class="pick-num">7</td><td class="player-name">Hideki Matsuyama</td><td class="prize-money">$2,053,970</td></tr>
-                        <tr><td class="pick-num">8</td><td class="player-name">Chris Gotterup <span class="trophy">🏆🏆</span></td><td class="prize-money">$3,576,375</td></tr>
-                        <tr><td class="pick-num">9</td><td class="player-name">Akshay Bhatia</td><td class="prize-money">$1,448,680</td></tr>
-                        <tr><td class="pick-num">10</td><td class="player-name">Si Woo Kim</td><td class="prize-money">$1,874,755</td></tr>
-                        <tr><td class="pick-num">11</td><td class="player-name">Keegan Bradley</td><td class="prize-money">$156,464</td></tr>
-                        <tr><td class="pick-num">12</td><td class="player-name">Alex Noren</td><td class="prize-money">$540,200</td></tr>
-                        <tr><td class="pick-num">13</td><td class="player-name">Jordan Spieth</td><td class="prize-money">$612,675</td></tr>
-                        <tr><td class="pick-num">14</td><td class="player-name">Michael Thorbjornsen</td><td class="prize-money">$603,930</td></tr>
-                        <tr><td class="pick-num">15</td><td class="player-name">Will Zalatoris</td><td class="prize-money">$117,607</td></tr>
-                        <tr><td class="pick-num">16</td><td class="player-name">Nick Taylor</td><td class="prize-money">$582,408</td></tr>
-                        <tr><td class="pick-num">17</td><td class="player-name">Min Woo Lee</td><td class="prize-money">$2,277,049</td></tr>
-                        <tr><td class="pick-num">18</td><td class="player-name">Luke Clanton</td><td class="prize-money zero">$0</td></tr>
-                        <tr><td class="pick-num">19</td><td class="player-name">Johnny Keefer</td><td class="prize-money">$143,191</td></tr>
-                        <tr><td class="pick-num">20</td><td class="player-name">Michael Brennan</td><td class="prize-money">$45,492</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- John's Team - 2ND PLACE -->
-            <div class="team-card second-place">
-                <div class="leader-badge">2ND</div>
-                <div class="team-header">
-                    <div class="team-name">John's Team</div>
-                    <div class="team-total">Total: <span>$13,192,668</span></div>
-                    <div class="team-wins">Wins: <span>🏆</span></div>
-                </div>
-                <table class="roster-table">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Player</th>
-                            <th>Earnings</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td class="pick-num">1</td><td class="player-name">Rory McIlroy</td><td class="prize-money">$2,142,750</td></tr>
-                        <tr><td class="pick-num">2</td><td class="player-name">Ludvig Aberg</td><td class="prize-money">$337,875</td></tr>
-                        <tr><td class="pick-num">3</td><td class="player-name">Justin Rose <span class="trophy">🏆</span></td><td class="prize-money">$1,806,375</td></tr>
-                        <tr><td class="pick-num">4</td><td class="player-name">Sepp Straka</td><td class="prize-money">$1,934,220</td></tr>
-                        <tr><td class="pick-num">5</td><td class="player-name">Robert MacIntyre</td><td class="prize-money">$786,475</td></tr>
-                        <tr><td class="pick-num">6</td><td class="player-name">Maverick McNealy</td><td class="prize-money">$647,275</td></tr>
-                        <tr><td class="pick-num">7</td><td class="player-name">Harris English</td><td class="prize-money">$600,007</td></tr>
-                        <tr><td class="pick-num">8</td><td class="player-name">Patrick Cantlay</td><td class="prize-money">$604,740</td></tr>
-                        <tr><td class="pick-num">9</td><td class="player-name">Harry Hall</td><td class="prize-money">$530,525</td></tr>
-                        <tr><td class="pick-num">10</td><td class="player-name">Brian Harman</td><td class="prize-money">$306,429</td></tr>
-                        <tr><td class="pick-num">11</td><td class="player-name">Jason Day</td><td class="prize-money">$820,160</td></tr>
-                        <tr><td class="pick-num">12</td><td class="player-name">Lucas Glover</td><td class="prize-money">$36,500</td></tr>
-                        <tr><td class="pick-num">13</td><td class="player-name">Marco Penge</td><td class="prize-money">$355,500</td></tr>
-                        <tr><td class="pick-num">14</td><td class="player-name">Ryan Fox</td><td class="prize-money">$847,520</td></tr>
-                        <tr><td class="pick-num">15</td><td class="player-name">Billy Horschel</td><td class="prize-money">$125,095</td></tr>
-                        <tr><td class="pick-num">16</td><td class="player-name">Aldrich Potgieter</td><td class="prize-money">$878,250</td></tr>
-                        <tr><td class="pick-num">17</td><td class="player-name">Wyndham Clark</td><td class="prize-money">$354,642</td></tr>
-                        <tr><td class="pick-num">18</td><td class="player-name">Garrick Higgo</td><td class="prize-money">$38,250</td></tr>
-                        <tr><td class="pick-num">19</td><td class="player-name">Jackson Kouivan</td><td class="prize-money zero">$0</td></tr>
-                        <tr><td class="pick-num">20</td><td class="player-name">Adrien Saddier</td><td class="prize-money">$40,080</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Dave's Team - 3RD PLACE -->
-            <div class="team-card third-place">
-                <div class="leader-badge">3RD</div>
-                <div class="team-header">
-                    <div class="team-name">Dave's Team</div>
-                    <div class="team-total">Total: <span>$7,276,213</span></div>
-                    <div class="team-wins">Wins: <span>-</span></div>
-                </div>
-                <table class="roster-table">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Player</th>
-                            <th>Earnings</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td class="pick-num">1</td><td class="player-name">Tommy Fleetwood</td><td class="prize-money">$1,480,700</td></tr>
-                        <tr><td class="pick-num">2</td><td class="player-name">Russell Henley</td><td class="prize-money">$597,539</td></tr>
-                        <tr><td class="pick-num">3</td><td class="player-name">Ben Griffin</td><td class="prize-money">$412,583</td></tr>
-                        <tr><td class="pick-num">4</td><td class="player-name">Justin Thomas</td><td class="prize-money zero">$0</td></tr>
-                        <tr><td class="pick-num">5</td><td class="player-name">Shane Lowry</td><td class="prize-money">$693,250</td></tr>
-                        <tr><td class="pick-num">6</td><td class="player-name">Matt Fitzpatrick</td><td class="prize-money">$821,488</td></tr>
-                        <tr><td class="pick-num">7</td><td class="player-name">Sam Burns</td><td class="prize-money">$747,918</td></tr>
-                        <tr><td class="pick-num">8</td><td class="player-name">Corey Conners</td><td class="prize-money">$199,100</td></tr>
-                        <tr><td class="pick-num">9</td><td class="player-name">Sung Jae Im</td><td class="prize-money zero">$0</td></tr>
-                        <tr><td class="pick-num">10</td><td class="player-name">Andrew Novak</td><td class="prize-money">$407,850</td></tr>
-                        <tr><td class="pick-num">11</td><td class="player-name">Aaron Rai</td><td class="prize-money">$192,529</td></tr>
-                        <tr><td class="pick-num">12</td><td class="player-name">Brooks Koepka</td><td class="prize-money">$22,176</td></tr>
-                        <tr><td class="pick-num">13</td><td class="player-name">Tom Hoge</td><td class="prize-money">$644,364</td></tr>
-                        <tr><td class="pick-num">14</td><td class="player-name">J.T. Poston</td><td class="prize-money">$164,275</td></tr>
-                        <tr><td class="pick-num">15</td><td class="player-name">Rasmus Hojgaard</td><td class="prize-money">$163,977</td></tr>
-                        <tr><td class="pick-num">16</td><td class="player-name">Tony Finau</td><td class="prize-money">$621,529</td></tr>
-                        <tr><td class="pick-num">17</td><td class="player-name">Rasmus Neergaard-Petersen</td><td class="prize-money">$57,819</td></tr>
-                        <tr><td class="pick-num">18</td><td class="player-name">Matt Kuchar</td><td class="prize-money">$25,377</td></tr>
-                        <tr><td class="pick-num">19</td><td class="player-name">Austin Eckroat</td><td class="prize-money">$23,739</td></tr>
-                        <tr><td class="pick-num">20</td><td class="player-name">Matt Wallace</td><td class="prize-money zero">$0</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        <div id="teamsContainer" class="teams-section"><div class="loading" style="color: #cc0000;">Error loading data. Please refresh the page.</div></div>
     </div>
 
     <footer>
         <div class="footer-logo">TOUR DRAFT</div>
         <p class="footer-text">© 2026 Fantasy Golf League</p>
     </footer>
+
+    <script>
+        // Google Sheet published CSV URL
+        const SHEET_URL = 'https://docs.google.com/spreadsheets/d/1DA3kSaus4_m_NDK29N0t6d6RWmdJj-l8Um1Zd9qaG0U/pub?gid=0&single=true&output=csv';
+
+        // Parse CSV text into array of arrays
+        function parseCSV(text) {
+            const lines = text.split('\n');
+            return lines.map(line => {
+                const result = [];
+                let current = '';
+                let inQuotes = false;
+                
+                for (let i = 0; i < line.length; i++) {
+                    const char = line[i];
+                    if (char === '"') {
+                        inQuotes = !inQuotes;
+                    } else if (char === ',' && !inQuotes) {
+                        result.push(current.trim());
+                        current = '';
+                    } else {
+                        current += char;
+                    }
+                }
+                result.push(current.trim());
+                return result;
+            });
+        }
+
+        // Parse money string to number
+        function parseMoney(str) {
+            if (!str || str === '' || str === '$0') return 0;
+            return parseInt(str.replace(/[$,]/g, '')) || 0;
+        }
+
+        // Format number as currency
+        function formatMoney(num) {
+            return '$' + num.toLocaleString();
+        }
+
+        // Generate trophy emojis based on win count
+        function getTrophies(wins) {
+            const winCount = parseInt(wins) || 0;
+            return '🏆'.repeat(winCount);
+        }
+
+        // Fetch and render data
+        async function loadData() {
+            try {
+                const response = await fetch(SHEET_URL);
+                const text = await response.text();
+                const data = parseCSV(text);
+                
+                // Parse header to understand column structure
+                // Expected: Pick, Gearoid's Team, $, Wins, Dave's Team, Wins, $, John's Team, $, Wins
+                const header = data[0];
+                
+                // Build teams data structure
+                const teams = {
+                    "Gearoid's Team": { name: "Gearoid's Team", players: [], total: 0, wins: 0 },
+                    "Dave's Team": { name: "Dave's Team", players: [], total: 0, wins: 0 },
+                    "John's Team": { name: "John's Team", players: [], total: 0, wins: 0 }
+                };
+
+                // Parse rows (skip header, skip last row which has totals)
+                for (let i = 1; i < data.length; i++) {
+                    const row = data[i];
+                    if (!row[0] || row[0] === '') continue; // Skip empty rows or total row
+                    
+                    const pick = row[0];
+                    
+                    // Gearoid's Team: columns 1 (name), 2 (money), 3 (wins)
+                    if (row[1]) {
+                        const earnings = parseMoney(row[2]);
+                        const wins = parseInt(row[3]) || 0;
+                        teams["Gearoid's Team"].players.push({
+                            pick: pick,
+                            name: row[1],
+                            earnings: earnings,
+                            wins: wins
+                        });
+                        teams["Gearoid's Team"].total += earnings;
+                        teams["Gearoid's Team"].wins += wins;
+                    }
+                    
+                    // Dave's Team: columns 4 (name), 5 (wins), 6 (money)
+                    if (row[4]) {
+                        const earnings = parseMoney(row[6]);
+                        const wins = parseInt(row[5]) || 0;
+                        teams["Dave's Team"].players.push({
+                            pick: pick,
+                            name: row[4],
+                            earnings: earnings,
+                            wins: wins
+                        });
+                        teams["Dave's Team"].total += earnings;
+                        teams["Dave's Team"].wins += wins;
+                    }
+                    
+                    // John's Team: columns 7 (name), 8 (money), 9 (wins)
+                    if (row[7]) {
+                        const earnings = parseMoney(row[8]);
+                        const wins = parseInt(row[9]) || 0;
+                        teams["John's Team"].players.push({
+                            pick: pick,
+                            name: row[7],
+                            earnings: earnings,
+                            wins: wins
+                        });
+                        teams["John's Team"].total += earnings;
+                        teams["John's Team"].wins += wins;
+                    }
+                }
+
+                // Sort teams by total earnings
+                const sortedTeams = Object.values(teams).sort((a, b) => b.total - a.total);
+                
+                // Assign places
+                const places = ['first-place', 'second-place', 'third-place'];
+                const placeLabels = ['1ST', '2ND', '3RD'];
+
+                // Render teams
+                const container = document.getElementById('teamsContainer');
+                container.innerHTML = sortedTeams.map((team, index) => `
+                    <div class="team-card ${places[index]}">
+                        <div class="leader-badge">${placeLabels[index]}</div>
+                        <div class="team-header">
+                            <div class="team-name">${team.name}</div>
+                            <div class="team-total">Total: <span>${formatMoney(team.total)}</span></div>
+                            <div class="team-wins">Wins: <span>${team.wins > 0 ? '🏆'.repeat(team.wins) : '-'}</span></div>
+                        </div>
+                        <table class="roster-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Player</th>
+                                    <th>Earnings</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${team.players.map(player => `
+                                    <tr>
+                                        <td class="pick-num">${player.pick}</td>
+                                        <td class="player-name">${player.name}${player.wins > 0 ? ` <span class="trophy">${'🏆'.repeat(player.wins)}</span>` : ''}</td>
+                                        <td class="prize-money${player.earnings === 0 ? ' zero' : ''}">${formatMoney(player.earnings)}</td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                `).join('');
+
+                // Update timestamp
+                document.getElementById('lastUpdated').textContent = 
+                    'Last updated: ' + new Date().toLocaleString();
+
+            } catch (error) {
+                console.error('Error loading data:', error);
+                document.getElementById('teamsContainer').innerHTML = 
+                    '<div class="loading" style="color: #cc0000;">Error loading data. Please refresh the page.</div>';
+            }
+        }
+
+        // Load data on page load
+        loadData();
+
+        // Auto-refresh every 5 minutes (300000ms)
+        setInterval(loadData, 300000);
+    </script>
 
 <div data-livemate-overlay="true" data-visualcompletion="ignore" style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; pointer-events: none; z-index: 2147483647; background: transparent;"><div style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.25); pointer-events: none; display: none;"></div><div style="position: fixed; border: 2px dashed rgb(0, 122, 204); background-color: rgba(255, 255, 255, 0.1); box-sizing: border-box; pointer-events: none; display: none; box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 0px 9999px;"></div><div style="position: fixed; background-color: rgba(0, 0, 0, 0.8); color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, sans-serif; pointer-events: none; display: none; white-space: nowrap;"></div><div style="position: fixed; bottom: 15%; left: 50%; transform: translateX(-50%); background-color: rgba(0, 0, 0, 0.8); color: white; padding: 12px 24px; border-radius: 9999px; font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, sans-serif; pointer-events: none; display: none; white-space: nowrap;">Click and drag at the section you want to share with Metamate</div></div><div id="metamate-chrome-extension-floating-composer">
       <div class="metamate-chrome-extension-composer-input-wrapper">
@@ -807,7 +883,7 @@
         <div class="end-content">
           <span class="binding-label">Binding</span>
           <div class="shortcut-keys"></div>
-          <a href="https://lookaside.fbsbx.com/m8/file_lookaside/?file_id=1250490430373534&amp;origin=https%3A%2F%2Fwww.internalfb.com&amp;ext=1771927651&amp;hash=Q4WxBwFz5AKe1xJTRrKB5ncOf_eA#" class="set-link">Set</a>
+          <a href="https://lookaside.fbsbx.com/m8/file_lookaside/?file_id=2142112693252381&amp;origin=https%3A%2F%2Fwww.internalfb.com&amp;ext=1771929997&amp;hash=Q4WxBwGoJrAC50sBKn0iTqwCOEW3#" class="set-link">Set</a>
         </div>
       </div>
     </div></body></html>
